@@ -24,7 +24,8 @@ namespace Interface
 
 
             AluguelVeiculo aluguelVeiculo = new AluguelVeiculo(inicio, final, new Veiculo(modelo));
-            ServicoAluguel servicoAluguel = new ServicoAluguel(hora, dia, new ImpostoServicoBrasil());
+
+            ServicoAluguel servicoAluguel = new ServicoAluguel(hora, dia, new ImpostoServicoBrasil());//Injeção de dependência pela classe Program na classe ServicoAluguel utilizando a abstração(interface)
             servicoAluguel.ProcessandoNotaFiscal(aluguelVeiculo);
             Console.WriteLine("Nota fiscal: ");
             Console.WriteLine(aluguelVeiculo.NotaFiscal);

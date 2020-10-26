@@ -10,11 +10,11 @@ namespace Interface.Service
 
         private IImpostoServico _impostoServico;
 
-        public ServicoAluguel(double precoPorHora, double precoPorDia, IImpostoServico impostoServico)
+        public ServicoAluguel(double precoPorHora, double precoPorDia, IImpostoServico impostoServico) //Caso de inversão de controle. Implementada a injeção de dependência por meio de construtor na classe Program
         {
             PrecoPorHora = precoPorHora;
             PrecoPorDia = precoPorDia;
-            _impostoServico = impostoServico; //feito inversão de controle por injeção de dependência
+            _impostoServico = impostoServico;
 
         }
 
