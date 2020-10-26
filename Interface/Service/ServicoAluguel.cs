@@ -8,12 +8,14 @@ namespace Interface.Service
         public double PrecoPorHora { get; private set; }
         public double PrecoPorDia { get; private set; }
 
-        private ImpostoServicoBrasil _impostoServicoBrasil = new ImpostoServicoBrasil();
+        private IImpostoServico _impostoServico;
 
-        public ServicoAluguel(double precoPorHora, double precoPorDia)
+        public ServicoAluguel(double precoPorHora, double precoPorDia, IImpostoServico impostoServico)
         {
             PrecoPorHora = precoPorHora;
             PrecoPorDia = precoPorDia;
+            _impostoServico = impostoServico; //feito inversão de controle por injeção de dependência
+
         }
 
         public void ProcessandoNotaFiscal(AluguelVeiculo aluguelVeiculo)
@@ -30,7 +32,7 @@ namespace Interface.Service
                 pagamentoBasico = PrecoPorDia * Math.Ceiling(Duracao.TotalDays);
             }
 
-            double imposto = _impostoServicoBrasil.Imposto(pagamentoBasico);
+            double imposto = _impostoServico.Imposto(pagamentoBasico);
             aluguelVeiculo.NotaFiscal = new NotaFiscal(pagamentoBasico, imposto);
         }
     }

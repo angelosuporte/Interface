@@ -12,7 +12,7 @@ namespace Interface.Entities
             PagamentoBasico = pagamentoBasico;
             Imposto = imposto;
         }
-        //Geralemtne usamos um método, mas usar uma propriedade calculada conforme abaixo também é possível
+        //Geralmente usamos um método, mas usar uma propriedade calculada conforme abaixo também é possível
         public double PagamentoTotal
         {
             get { return PagamentoBasico + Imposto; }

@@ -1,6 +1,6 @@
 ﻿namespace Interface.Service
 {
-    class ImpostoServicoBrasil
+    class ImpostoServicoBrasil : IImpostoServico //<---realização da interface
     {
         public double Imposto(double quantia)
         {

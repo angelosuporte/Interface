@@ -9,7 +9,7 @@ namespace Interface.Entities
         public Veiculo Veiculo { get; set; }
         public NotaFiscal NotaFiscal { get; set; }
 
-        //Não será necessário no costrutor a NotaFiscal porque ela só será gerada no processsamento para realizar o pagamento do aluguel
+        //Não será necessário no construtor a NotaFiscal porque ela só será gerada no processamento para realizar o pagamento do aluguel
         public AluguelVeiculo(DateTime inicio, DateTime devolucao, Veiculo veiculo)
         {
             Inicio = inicio;

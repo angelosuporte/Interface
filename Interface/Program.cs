@@ -24,7 +24,7 @@ namespace Interface
 
 
             AluguelVeiculo aluguelVeiculo = new AluguelVeiculo(inicio, final, new Veiculo(modelo));
-            ServicoAluguel servicoAluguel = new ServicoAluguel(hora, dia);
+            ServicoAluguel servicoAluguel = new ServicoAluguel(hora, dia, new ImpostoServicoBrasil());
             servicoAluguel.ProcessandoNotaFiscal(aluguelVeiculo);
             Console.WriteLine("Nota fiscal: ");
             Console.WriteLine(aluguelVeiculo.NotaFiscal);
